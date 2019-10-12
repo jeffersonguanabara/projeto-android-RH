@@ -74,15 +74,19 @@ class ListarActivity : AppCompatActivity() {
 
     fun salvar(intent: Intent) {
         var className = intent.getStringExtra("activity_name")
+        var usuario = intent.getStringExtra("username")
+        var senhaLogin = intent.getStringExtra("senha")
 
-        if (className.equals("activity_main")) {
-            if (pessoas.isEmpty()){
-                var intent = Intent()
-                intent.putExtra("mensagem", "Nenhum usuário cadastrado!")
-                setResult(RESULT_CODE, intent)
-                finish()
-            }
-        } else if(className.equals("activity_cadastrar")) {
+//        if (className.equals("activity_main")) {
+////            if (pessoas.isEmpty()){
+////                var intent = Intent()
+////                intent.putExtra("mensagem", "Nenhum usuário cadastrado!")
+////                setResult(RESULT_CODE, intent)
+////                finish()
+////            }
+//
+//        } else
+        if(className.equals("activity_cadastrar")) {
             var nome = intent.getStringExtra("nome")
             var email = intent.getStringExtra("email")
             var cpf = intent.getStringExtra("CPF")
