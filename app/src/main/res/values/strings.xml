@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppRH</string>
+    <string name="textViewLabel_entrar">Entrar</string>
+    <string name="textEditUser">Usuário</string>
+    <string name="textEditSenha">Senha</string>
+    <string name="textViewCadastrar">Cadastrar</string>
+    <string name="textViewNome">NOME</string>
+    <string name="textViewCPF">CPF</string>
+    <string name="textViewEmail">EMAIL</string>
+    <string name="textViewNomeDeUsuario">USERNAME</string>
+    <string name="textViewPassword">SENHA</string>
+    <string name="textLabelTelaCadastro">Informe seus dados:</string>
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_buttonCadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/id_editTextNomeCadastro"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/textViewNome"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#CA464444"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatic"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/id_textViewCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewCadastrar"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_toolbarCadastrar"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/id_editTextCPFCadastro"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/textViewCPF"
+        android:inputType="text|number"
+        android:maxLength="11"
+        android:textColor="#000000"
+        android:textColorHint="#CA464444"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_editTextEmailCadastro"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/id_editTextUserNameCadastro"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/textViewNomeDeUsuario"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#CA464444"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_editTextCPFCadastro"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/id_editTextSenhaCadastro"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/textViewPassword"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#CA464444"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_editTextUserNameCadastro"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/id_editTextEmailCadastro"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/textViewEmail"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#CA464444"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_editTextNomeCadastro"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/textViewStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textLabelTelaCadastro"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_textViewCadastrar"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <Button
+        android:id="@+id/id_buttonCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="30dp"
+        android:background="#E2363958"
+        android:text="@string/textViewCadastrar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_editTextSenhaCadastro" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbarCadastrar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
