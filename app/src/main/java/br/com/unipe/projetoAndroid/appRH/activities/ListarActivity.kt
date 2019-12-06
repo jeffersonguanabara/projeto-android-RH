@@ -1,18 +1,22 @@
 
-package br.com.unipe.projetoAndroid.appRH
+package br.com.unipe.projetoAndroid.appRH.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.unipe.projetoAndroid.appRH.R
+import br.com.unipe.projetoAndroid.appRH.adapter.MyAdapter
+import br.com.unipe.projetoAndroid.appRH.model.Pessoa
+import br.com.unipe.projetoAndroid.appRH.service.PessoaService
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-import java.util.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 class ListarActivity : AppCompatActivity() {
 
@@ -22,7 +26,7 @@ class ListarActivity : AppCompatActivity() {
     private lateinit var floatingActionButton: FloatingActionButton
 
 
-    private var pessoas = LinkedList<Pessoa>()
+    private lateinit var pessoas : List<Pessoa>
 
     companion object {
         const val RESULT_CODE = 1
@@ -35,10 +39,6 @@ class ListarActivity : AppCompatActivity() {
 
 
         setSupportActionBar(findViewById(R.id.id_toolbarListar))
-//        supportActionBar?.setDisplayShowHomeEnabled(true)
-//        supportActionBar?.setDisplayShowTitleEnabled(true)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         salvar(intent)
 
     }
@@ -46,7 +46,7 @@ class ListarActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == ListarActivity.REQUEST_CODE && resultCode == CadastrarActivity.RESULT_CODE) {
+        if (requestCode == REQUEST_CODE && resultCode == CadastrarActivity.RESULT_CODE) {
             if (data != null) {
                 salvar(data)
                 Toast.makeText(ListarActivity@this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show()
@@ -73,31 +73,21 @@ class ListarActivity : AppCompatActivity() {
     }
 
     fun salvar(intent: Intent) {
-        var className = intent.getStringExtra("activity_name")
-        var usuario = intent.getStringExtra("username")
-        var senhaLogin = intent.getStringExtra("senha")
 
-//        if (className.equals("activity_main")) {
-////            if (pessoas.isEmpty()){
-////                var intent = Intent()
-////                intent.putExtra("mensagem", "Nenhum usuário cadastrado!")
-////                setResult(RESULT_CODE, intent)
-////                finish()
-////            }
-//
-//        } else
-        if(className.equals("activity_cadastrar")) {
-            var nome = intent.getStringExtra("nome")
-            var email = intent.getStringExtra("email")
-            var cpf = intent.getStringExtra("CPF")
-            var username = intent.getStringExtra("username")
-            var senha = intent.getStringExtra("senha")
-            pessoas.add(Pessoa(cpf, nome, email, username, senha))
+
+        doAsync {
+            pessoas = PessoaService.listarTodas()
+
+            uiThread {
+                Log.e("ListarActivity", pessoas.toString())
+            }
         }
+
         print(pessoas.toString())
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = MyAdapter(pessoas, this)
+        viewAdapter =
+            MyAdapter(pessoas, this)
 
         recicleView = findViewById<RecyclerView>(R.id.id_RecicleViewListar).apply {
             setHasFixedSize(true)
@@ -107,12 +97,15 @@ class ListarActivity : AppCompatActivity() {
             adapter = viewAdapter
         }
 
-        floatingActionButton = findViewById(R.id.floatingActionButton)
+        floatingActionButton = findViewById(R.id.id_floatingButtonAdicionar)
 
         floatingActionButton.setOnClickListener{
             var intent = Intent(ListarActivity@this, CadastrarActivity::class.java)
             intent.putExtra("activity_name", "activity_listar")
-            startActivityForResult(intent, REQUEST_CODE)
+            startActivityForResult(intent,
+                REQUEST_CODE
+            )
         }
     }
+
 }

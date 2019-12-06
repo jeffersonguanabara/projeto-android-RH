@@ -1,4 +1,4 @@
-package br.com.unipe.projetoAndroid.appRH
+package br.com.unipe.projetoAndroid.appRH.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import br.com.unipe.projetoAndroid.appRH.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +40,9 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("activity_name", "activity_main")
                 intent.putExtra("username", username.text.toString())
                 intent.putExtra("password", username.text.toString())
-                startActivityForResult(intent, REQUEST_CODE)
+                startActivityForResult(intent,
+                    REQUEST_CODE
+                )
             }
         }
 
@@ -50,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("activity_name", "activity_main")
             startActivity(intent)
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

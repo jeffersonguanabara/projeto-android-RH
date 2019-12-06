@@ -1,9 +1,10 @@
-package br.com.unipe.projetoAndroid.appRH
+package br.com.unipe.projetoAndroid.appRH.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import br.com.unipe.projetoAndroid.appRH.R
 
 class ExibirActivity : AppCompatActivity() {
 

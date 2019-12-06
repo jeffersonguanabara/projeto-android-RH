@@ -9,33 +9,35 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/id_RecicleViewListar"
-        android:layout_width="404dp"
-        android:layout_height="674dp"
+        android:layout_width="401dp"
+        android:layout_height="669dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="@+id/id_floatingButtonAdicionar"
         app:layout_constraintTop_toBottomOf="@+id/id_toolbarListar"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/support_simple_spinner_dropdown_item" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/id_toolbarListar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/id_floatingButtonAdicionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:focusable="auto"
         android:src="@drawable/ic_add_black_24dp"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"

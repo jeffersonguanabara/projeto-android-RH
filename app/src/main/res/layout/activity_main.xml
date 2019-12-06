@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DAF8F7F7"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <ImageView
         android:id="@+id/id_imgViewUser"
@@ -86,9 +86,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_btnEntrar"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
